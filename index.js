@@ -13,6 +13,7 @@ app.use(morgan('dev'))
 app.use(cors('*'))
 
 app.use('/auth', require('./src/routes/auth'))
+app.use('/product', require('./src/routes/product'))
 
 // Test App
 app.get('/', (req, res) => {
