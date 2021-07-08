@@ -14,6 +14,7 @@ app.use(cors('*'))
 
 app.use('/auth', require('./src/routes/auth'))
 app.use('/product', require('./src/routes/product'))
+app.use('/transaction', require('./src/routes/transaction'))
 
 // Test App
 app.get('/', (req, res) => {

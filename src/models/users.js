@@ -2,10 +2,11 @@ const db = require('../helpers/db')
 
 exports.getUserByCondition = (cond) => {
   return new Promise((resolve, reject) => {
-    db.query(`SELECT * FROM users WHERE ${Object.keys(cond).map(item => `${item}="${cond[item]}"`).join(' AND ')}`, (err, res, field) => {
+    const query = db.query(`SELECT * FROM users WHERE ${Object.keys(cond).map(item => `${item}="${cond[item]}"`).join(' AND ')}`, (err, res, field) => {
       if (err) reject(err)
       resolve(res)
     })
+    console.log(query.sql)
   })
 }
 
